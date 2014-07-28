@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact name="cloop-level-gen:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/cloop_level_gen_jar</output-path>
+    <root id="root">
+      <element id="archive" name="cloop-level-gen.jar">
+        <element id="module-output" name="cloop-level-gen" />
+      </element>
+      <element id="library" level="application" name="scala" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Class-Path: jline-2.11.jar config-1.2.1.jar scala-library.jar scala-re
+ flect.jar scala-compiler.jar scala-actors-2.11.0.jar scala-xml_2.11-1
+ .0.2.jar akka-actor_2.11-2.3.3.jar scala-swing_2.11-1.0.1.jar scala-a
+ ctors-migration_2.11-1.1.0.jar scala-parser-combinators_2.11-1.0.1.ja
+ r scala-continuations-library_2.11-1.0.2.jar scala-continuations-plug
+ in_2.11.1-1.0.2.jar
+Main-Class: com.cloop.levelgen.GeneratorApp
+

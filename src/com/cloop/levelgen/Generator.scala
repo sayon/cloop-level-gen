@@ -1,5 +1,7 @@
 package com.cloop.levelgen
 
+import com.cloop.levelgen.Generator.Transformations
+
 import scala.util.Random
 
 object Generator {
@@ -81,12 +83,14 @@ object Generator {
       new Field(newArray)
     }
 
+    val occupiedString = "O"
+    val freeString = "."
     override def toString(): String = {
       val sb = new StringBuilder
       for (x <- 0 until width) {
         for (y <- 0 until height) {
           sb ++= " "
-          sb ++= (if (isOccupied(x, y)) "1" else "0")
+          sb ++= (if (isOccupied(x, y)) occupiedString else freeString)
         }
         sb ++= "\n"
       }
@@ -108,4 +112,29 @@ object Generator {
     loop(Field(width, height).withRandomDot, steps-1)
   }
 
+}
+
+object GeneratorApp extends App {
+  try {
+    val width = args(0).toInt
+    val height = args(1).toInt
+    val steps = args(2).toInt
+    val (solution, field) = Generator.generateLevel(width, height, steps)
+
+    println(s"Field:")
+    println(field)
+    println()
+    println(s"Solution:")
+    solution.foreach {
+      s => println(s"${s(0)} ${s(1)} ${s(2)}" )
+    }
+  }
+  catch {
+    case _: Throwable => usage
+  }
+
+
+  def usage = {
+    println("arguments: width height steps_count")
+  }
 }
