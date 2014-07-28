@@ -105,7 +105,7 @@ object Generator {
         case (f, pos, true) if stepsLeft == 0 => (pos::history, f)
 
       }
-    loop(Field(width, height).withRandomDot, steps)
+    loop(Field(width, height).withRandomDot, steps-1)
   }
 
 }
